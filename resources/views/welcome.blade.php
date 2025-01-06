@@ -10,6 +10,7 @@
 
 <body>
     <h1>Students</h1>
+    {{ Auth::user() }}
     <table border="1">
         <thead>
             <th>Id</th>
