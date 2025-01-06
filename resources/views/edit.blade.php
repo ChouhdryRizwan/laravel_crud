@@ -9,7 +9,7 @@
 <body>
     
     <h1>Register User</h1>
-    <form action="/update/{{$student->id}}" method="POST">
+    <form action="/update/{{$student->id}}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="name">Name: </label>
         <input type="text" name="username" value="{{$student->name}}">
@@ -21,6 +21,13 @@
 
         <label for="age">Age: </label>
         <input type="age" name="userage" value="{{$student->age}}">
+        <br><br>
+
+        <label for="age">Image: </label>
+        <input type="file" name="userimage">
+        <br><br>
+
+        <img src="{{ asset('storage/' . $student->image) }}" alt={{ $student->name }} height="100" width="auto">
         <br><br>
 
         <input type="submit" value="Update">

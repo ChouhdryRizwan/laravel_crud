@@ -16,6 +16,7 @@
             <th>Name</th>
             <th>Email</th>
             <th>Age</th>
+            <th>Image</th>
             <th>Action</th>
         </thead>
         <tbody>
@@ -32,6 +33,9 @@
                     </td>
                     <td>
                         {{ $std->age }}
+                    </td>
+                    <td>
+                        <img src="{{ asset('storage/' . $std->image) }}" alt={{ $std->name }} height="50" width="auto">
                     </td>
                     <td>
                         <a href="/edit/{{$std->id}}">

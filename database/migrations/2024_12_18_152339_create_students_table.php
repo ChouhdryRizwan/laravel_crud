@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',120);
             $table->string('email',50);
+            $table->string('image');
             $table->integer('age');
             $table->timestamps();
         });

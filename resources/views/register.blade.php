@@ -9,7 +9,7 @@
 <body>
     
     <h1>Register User</h1>
-    <form action="/save" method="POST">
+    <form action="/save" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="name">Name: </label>
         <input type="text" name="username">
@@ -21,6 +21,10 @@
 
         <label for="age">Age: </label>
         <input type="age" name="userage">
+        <br><br>
+
+        <label for="age">Image: </label>
+        <input type="file" name="userimage">
         <br><br>
 
         <input type="submit" value="Submit">
