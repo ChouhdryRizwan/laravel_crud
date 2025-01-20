@@ -22,3 +22,6 @@ Route::get('/saveUser',[UserController::class,'userRegister']);
 Route::post('/saveUserdata',[UserController::class,'saveUserData']);
 Route::get('/loginUser',[UserController::class,'loginUser']);
 Route::post('/login',[UserController::class,'login']);
+
+//send mail
+Route::get('/email',[UserController::class,'sendEmail']);

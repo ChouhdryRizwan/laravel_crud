@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
 
 class UserController extends Controller
 {
@@ -47,4 +49,17 @@ class UserController extends Controller
             return 'try again';
         }
     }
+
+    public function sendEmail(Request $request){
+        
+
+        $to = "chouhdryrizwan786@gmail.com";
+        $message = "<h1>Welcome.</h1>";
+        $subject = "This is subject from testing";
+
+       $result =  Mail::to($to)->send(new TestMail($message,$subject));
+
+        return $result;
+    }
+
 }
