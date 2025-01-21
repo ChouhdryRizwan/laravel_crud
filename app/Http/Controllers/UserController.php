@@ -54,12 +54,26 @@ class UserController extends Controller
         
 
         $to = "chouhdryrizwan786@gmail.com";
-        $message = "<h1>Welcome.</h1>";
+        $message = "Welcome";
         $subject = "This is subject from testing";
+        $details  = [
+            'title' => 'Mail from Rizwan',
+            'body' => 'This is for testing mail using smtp',
+            'name' => 'Rizwan Chouhdry',
+            'mobile'=> '0332-6093660',
+            'gender'=> true,
+            'age' => 24
+        ];
 
-       $result =  Mail::to($to)->send(new TestMail($message,$subject));
+       $result =  Mail::to($to)->send(new TestMail($message,$subject,$details));
 
-        return $result;
+        // dd($result);
+
+        if($result){
+            return "Email sent successfully";
+        }else{
+            return "Email not sent";
+        }
     }
 
 }

@@ -19,12 +19,14 @@ class TestMail extends Mailable
 
      public $newmessage;
      public $newsubject;
+     public $newdetails;
 
 
-    public function __construct($message,$subject)
+    public function __construct($message,$subject,$details)
     {
         $this->newmessage = $message;
         $this->newsubject = $subject;
+        $this->newdetails = $details;
     }
 
     /**
@@ -44,6 +46,7 @@ class TestMail extends Mailable
     {
         return new Content(
             view: 'mail.testmail',
+            // text: "mail.testmail",
         );
     }
 

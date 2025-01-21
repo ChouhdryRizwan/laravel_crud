@@ -8,6 +8,27 @@
 </head>
 <body>
     <h1>{{$newsubject}}</h1>
-    <h2>{{$newmessage}}</h2>
+    <h3>{{$newmessage}}</h3>
+
+    <table border='1'>
+      <thead>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Gender</th>
+        <th>Age</th>
+      </thead>
+      <tbody>
+        <tr>
+            <td>{{$newdetails['title']}}</td>
+            <td>{{$newdetails['body']}}</td>
+            <td>{{$newdetails['name']}}</td>
+            <td>{{$newdetails['mobile']}}</td>
+            <td>{{$newdetails['gender']}}</td>
+            <td>{{$newdetails['age']}}</td>
+        </tr>
+      </tbody>
+    </table>
 </body>
 </html>
